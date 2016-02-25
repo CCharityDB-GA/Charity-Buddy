@@ -17,6 +17,7 @@ Rails.application.routes.draw do
   #devise_for :users
 
   root to: "welcome#index"
+  get "donor/list", to: "donor#list", as: "donor_list"
 
   # Example resource route with options:
   #   resources :products do
