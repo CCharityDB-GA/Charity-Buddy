@@ -1,16 +1,18 @@
 <h2>Welcome to the donor list</h2>
 
-<%= current_user.donors.each do |donor| %>
-	<li>
-		<%= donor.name %>
-	</li>
+<%= current_user.donors.map do |donor| %>
+	<ul>
+		<li>
+			<b>Donor Name: </b><%= donor.name %><br><b> Lifetime Donations: </b> <%= donor.lifetime_donations %>
+		</li>
+	</ul>
 <% end %>
 
 <%= form_tag(donor_add_path) do %>
-  	<%= label_tag "Donor name: " %><br>
-  	<%= text_field_tag :name %><br>
-		<%= label_tag "Donor email" %><br>
-		<%= text_field_tag :email %>
+  <%= label_tag "Donor name: " %><br>
+  <%= text_field_tag :name %><br>
+	<%= label_tag "Donor email" %><br>
+	<%= text_field_tag :email %>
+	<%= submit_tag "Add Donor"%>
+<% end %>
 
-		<%= submit_tag "Add Donor"%>
-	<% end %>
