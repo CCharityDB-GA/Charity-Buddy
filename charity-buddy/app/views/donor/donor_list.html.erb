@@ -1,0 +1,16 @@
+<h2>Welcome to the donor list</h2>
+
+<%= current_user.donors.each do |donor| %>
+	<li>
+		<%= donor.name %>
+	</li>
+<% end %>
+
+<%= form_tag(donor_add_path) do %>
+  	<%= label_tag "Donor name: " %><br>
+  	<%= text_field_tag :name %><br>
+		<%= label_tag "Donor email" %><br>
+		<%= text_field_tag :email %>
+
+		<%= submit_tag "Add Donor"%>
+	<% end %>

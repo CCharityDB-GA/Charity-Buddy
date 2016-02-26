@@ -8,4 +8,4 @@ method: :get %>
 <%= button_to "logout", (destroy_user_session_path), 
 method: :delete %>
 
-<% link_to "Donor list", (donor_list_path) %>
+<%= link_to "Donor list", (donor_list_path), method: :get %>

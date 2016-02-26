@@ -18,6 +18,7 @@ Rails.application.routes.draw do
 
   root to: "welcome#index"
   get "donor/list", to: "donor#list", as: "donor_list"
+  post "donor/add", to: "donor#add", as: "donor_add"
 
   # Example resource route with options:
   #   resources :products do
