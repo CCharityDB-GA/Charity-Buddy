@@ -5,8 +5,9 @@ class DonorController < ApplicationController
 	end
 
 	def add
-		@donor = current_user.donors.create(name: params[:name], email: params[:email])
-		#binding.pry
+		current_user.donors.create!(name: params[:name], 
+																email: params[:email],
+																username: params[:username])
 		render :donor_list
 	end
 

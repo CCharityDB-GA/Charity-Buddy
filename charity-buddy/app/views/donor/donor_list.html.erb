@@ -1,18 +1,34 @@
-<h2>Welcome to the donor list</h2>
 
-<%= current_user.donors.map do |donor| %>
-	<ul>
-		<li>
-			<b>Donor Name: </b><%= donor.name %><br><b> Lifetime Donations: </b> <%= donor.lifetime_donations %>
-		</li>
-	</ul>
-<% end %>
 
-<%= form_tag(donor_add_path) do %>
-  <%= label_tag "Donor name: " %><br>
-  <%= text_field_tag :name %><br>
-	<%= label_tag "Donor email" %><br>
-	<%= text_field_tag :email %>
-	<%= submit_tag "Add Donor"%>
-<% end %>
+
+<body>
+	<div id="header">
+		<h2>Welcome to the donor list</h2>
+	</div>
+		<div id="content">
+			
+			<% current_user.donors.map do |donor| %>
+		
+				<b>Donor Name: </b><%= donor.name %><br>
+				username: <%= donor.username %><br>
+				Lifetime Donations: <%= donor.lifetime_donations %><br>
+				Email: <%= donor.email %><br>
+		
+			<% end %>
+			<% scope = Donor.all.page(params[:page]) %>
+			<%= paginate(scope) %>
+		
+		</div>
+		<div id="donor_submit">
+			<%= form_tag(donor_add_path) do %>
+  		<%= label_tag "Donor name: " %><br />
+  		<%= text_field_tag :name %><br />
+  		<%= label_tag "Username (must be unique): " %><br />
+  		<%= text_field_tag :username %><br />
+			<%= label_tag "Donor email" %><br />
+			<%= text_field_tag :email %><br />
+			<%= submit_tag "Add Donor"%>
+			<% end %>
+		</div>
+</body>
 

@@ -1,11 +1,17 @@
-<h1>Welcome to CharityBuddy!(working name)</h1>
 
-<%= button_to "Sign Up", (new_user_registration_path),
-method: :get  %>
-<%= button_to "login", (new_user_session_path),
-method: :get %>
+<body>
+	<div id="header">
+		<h1>Welcome to CharityBuddy!(working name)</h1>
+	</div>
+	<div id="content">
+		<%= button_to "Sign Up", (new_user_registration_path),
+		method: :get  %>
+		<%= button_to "login", (new_user_session_path),
+		method: :get %>
 
-<%= button_to "logout", (destroy_user_session_path), 
-method: :delete %>
-
-<%= link_to "Donor list", (donor_list_path), method: :get %>
+		<%= button_to "logout", (destroy_user_session_path), 
+		method: :delete %>
+	</div>
+	<div id="nav">
+	<%= link_to "Donor list", (donor_list_path), method: :get %>
+</div>
