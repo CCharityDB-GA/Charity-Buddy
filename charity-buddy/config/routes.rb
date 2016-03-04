@@ -20,6 +20,8 @@ Rails.application.routes.draw do
   get "donor/list", to: "donor#list", as: "donor_list"
   post "donor/add", to: "donor#add", as: "donor_add"
 
+  get "donate", to: "donations#donate", as: "donate"
+
   # Example resource route with options:
   #   resources :products do
   #     member do

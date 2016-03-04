@@ -3,7 +3,7 @@
 
 <body>
 	<div id="header">
-		<h2>Welcome to the donor list</h2>
+		<h2>Charity Buddy Donor List</h2>
 	</div>
 		<div id="content">
 			
@@ -13,7 +13,9 @@
 				username: <%= donor.username %><br>
 				Lifetime Donations: <%= donor.lifetime_donations %><br>
 				Email: <%= donor.email %><br>
-		
+				<button id="button">
+					<%= link_to "Add Donation", (donate_path) %>
+				</button><br>
 			<% end %>
 			<% scope = Donor.all.page(params[:page]) %>
 			<%= paginate(scope) %>
