@@ -3,10 +3,13 @@
 </body>
 
 <div id="add_campaing">
-		<%= form_tag(add_campaing_path) do %>
+		<%= form_tag(add_cause_path) do %>
 		<%= label_tag "Campaing Name" %>
-		<%= text_field_tag :name %>
+		<%= text_field_tag :name %><br>
 		<%= label_tag "Notes" %>
-		<%= text_area_tag :notes, nil, cols: 30, rows:5 %>
+		<%= text_area_tag :notes, nil, cols: 30, rows:5 %><br>
+		<%= submit_tag "Add Campaing" %>
+	
 </div>
 <% end %>
+

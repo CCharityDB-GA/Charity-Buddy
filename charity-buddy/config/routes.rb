@@ -27,6 +27,7 @@ Rails.application.routes.draw do
   post "add/campaing", to: "campaing#add", as: "add_campaing"
 
   get "causes", to: "causes#list", as: "causes_list"
+  post "add/cause", to: "causes#add", as: "add_cause"
 
   # Example resource route with options:
   #   resources :products do
