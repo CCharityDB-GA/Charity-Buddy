@@ -21,6 +21,7 @@ Rails.application.routes.draw do
   post "donor/add", to: "donor#add", as: "donor_add"
 
   get "donate", to: "donations#donate", as: "donate"
+  post "donation/add", to: "donations#add", as: "add_donation"
 
   # Example resource route with options:
   #   resources :products do

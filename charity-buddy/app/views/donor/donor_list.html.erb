@@ -3,8 +3,22 @@
 
 <body>
 	<div id="header">
-		<h2>Charity Buddy Donor List</h2>
+		<h2>Donor List<br>Feed Charity Buddy Below</h2>
 	</div>
+		<div id="donate">
+			<%= form_tag(add_donation_path) do %>
+			<%= label_tag "Donor Username" %>
+			<%= text_field_tag :username %>
+			<%= label_tag "Amount" %>
+			<%= number_field_tag :amount %>
+			<%= label_tag "Cause" %>
+			<%= text_field_tag :cause %>
+			<%= label_tag "Event" %>
+			<%= text_field_tag :event %>
+			<%= submit_tag "Add Donation" %>
+		</div>
+		<% end %>
+
 		<div id="content">
 			
 			<% current_user.donors.map do |donor| %>
@@ -13,9 +27,6 @@
 				username: <%= donor.username %><br>
 				Lifetime Donations: <%= donor.lifetime_donations %><br>
 				Email: <%= donor.email %><br>
-				<button id="button">
-					<%= link_to "Add Donation", (donate_path) %>
-				</button><br>
 			<% end %>
 			<% scope = Donor.all.page(params[:page]) %>
 			<%= paginate(scope) %>
