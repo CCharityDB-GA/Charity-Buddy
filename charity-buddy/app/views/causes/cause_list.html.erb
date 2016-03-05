@@ -1,15 +1,33 @@
 <body>
-	<h1>Campaings</h1>
+	<div id="header">
+		<h1>Campaings</h1>
+	</div>
 </body>
 
 <div id="add_campaing">
 		<%= form_tag(add_cause_path) do %>
-		<%= label_tag "Campaing Name" %>
+		<%= label_tag "Campaing Name" %><br>
 		<%= text_field_tag :name %><br>
-		<%= label_tag "Notes" %>
-		<%= text_area_tag :notes, nil, cols: 30, rows:5 %><br>
+		<%= label_tag "Description" %><br>
+		<%= text_area_tag :notes, nil, cols: 30, rows:2 %><br>
 		<%= submit_tag "Add Campaing" %>
-	
-</div>
+	</div>
 <% end %>
+
+<div id="content">
+	<% causes = Cause.all %>
+	<% causes.map do |cause| %>
+	<b>Campaing: </b> <%= cause.name %><br>
+	Total Donations: <% cause.amount %><br>
+	Description: <%= cause.notes %><br>
+
+<% end %>
+</div>
+
+
+
+
+
+
+
 

@@ -6,6 +6,6 @@ class CausesController < ApplicationController
 
 	def add
 		cause = Cause.create!(name: params[:name], notes: params[:notes])
-		binding.pry
+		render :cause_list
 	end
 end
