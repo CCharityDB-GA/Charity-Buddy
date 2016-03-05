@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160305040129) do
     t.integer  "donation_total"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
+    t.string   "notes"
   end
 
   create_table "donations", force: :cascade do |t|

@@ -4,6 +4,7 @@ class CreateCampaigns < ActiveRecord::Migration
     	t.string :name, null: false
     	t.integer :donation_total
       t.timestamps null: false
+      t.string :notes
     end
   end
 end
