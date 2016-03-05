@@ -1,0 +1,12 @@
+<body>
+	<h1>Campaings</h1>
+</body>
+
+<div id="add_campaing">
+		<%= form_tag(add_campaing_path) do %>
+		<%= label_tag "Campaing Name" %>
+		<%= text_field_tag :name %>
+		<%= label_tag "Notes" %>
+		<%= text_area_tag :notes, nil, cols: 30, rows:5 %>
+</div>
+<% end %>

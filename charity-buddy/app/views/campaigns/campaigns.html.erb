@@ -13,12 +13,16 @@
 		<%= form_tag(add_campaing_path) do %>
 		<%= label_tag "Campaing Name" %>
 		<%= text_field_tag :name %>
-		<%= label_tag  %>
+		<%= label_tag "Notes" %>
+		<%= text_area_tag :notes, nil, cols: 30, rows:5 %>
+		<% end %>
 	</div>
 
 	<div id="content">
 
-
+		<% Campaings.all.map do |campaing| %>
+		<b>Cause</b> <%= campaing.name %>
+		<% end %>
 
 	</div>
 

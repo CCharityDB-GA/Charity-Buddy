@@ -23,8 +23,10 @@ Rails.application.routes.draw do
   get "donate", to: "donations#donate", as: "donate"
   post "donation/add", to: "donations#add", as: "add_donation"
 
-  get "campaings", to: "campaings#index", as: "campaings_index"
+  get "campaing/index", to: "campaings#index", as: "campaings_index"
   post "add/campaing", to: "campaing#add", as: "add_campaing"
+
+  get "causes", to: "causes#list", as: "causes_list"
 
   # Example resource route with options:
   #   resources :products do

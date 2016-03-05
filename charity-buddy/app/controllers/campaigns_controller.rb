@@ -4,8 +4,5 @@ class CampaignsController < ApplicationController
 		render :campaigns
 	end
 
-	def add
-		
-	end	
 
 end
