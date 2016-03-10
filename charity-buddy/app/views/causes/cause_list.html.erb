@@ -2,27 +2,34 @@
 	<div id="header">
 		<h1>Campaings</h1>
 	</div>
-</body>
+	<div id="nav">
+		<button id="button">
+			<%= link_to "Home", (root_path) %>
+		</button>
+		<button id="button">
+			<%= link_to "Donor List", (donor_list_path) %>
+		</button>
 
-<div id="add_campaing">
-		<%= form_tag(add_cause_path) do %>
-		<%= label_tag "Campaing Name" %><br>
-		<%= text_field_tag :name %><br>
-		<%= label_tag "Description" %><br>
-		<%= text_area_tag :notes, nil, cols: 30, rows:2 %><br>
-		<%= submit_tag "Add Campaing" %>
+	<div id="add_campaing">
+			<%= form_tag(add_cause_path) do %>
+			<%= label_tag "Campaing Name" %><br>
+			<%= text_field_tag :name %><br>
+			<%= label_tag "Description" %><br>
+			<%= text_area_tag :notes, nil, cols: 30, rows:2 %><br>
+			<%= submit_tag "Add Campaing" %>
 	</div>
-<% end %>
+	<% end %>
 
-<div id="content">
-	<% causes = Cause.all %>
-	<% causes.map do |cause| %>
-	<b>Campaing: </b> <%= cause.name %><br>
-	Total Donations: <% cause.amount %><br>
-	Description: <%= cause.notes %><br>
+	<div id="content">
+		<% causes = Cause.all %>
+		<% causes.map do |cause| %>
+		<b>Campaing: </b> <%= cause.name %><br>
+		Total Donations: <%= cause.amount %><br>
+		Description: <%= cause.notes %><br>
 
-<% end %>
-</div>
+	<% end %>
+	</div>
+</body>
 
 
 
