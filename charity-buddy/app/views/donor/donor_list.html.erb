@@ -13,6 +13,7 @@
 				<%= link_to "Campaings", (causes_list_path) %>
 			</button>
 	</div>
+		<b>Add an Individual donation:</b><br> The only required fields are username (must match a donor username or 'anon', not case sensitive), and amount<br>Put the cause name and/or event name and the donation will be added to the total of the cause/event.
 		<div id="donate">
 			<%= form_tag(add_donation_path) do %>
 			<%= label_tag "Donor Username" %>
