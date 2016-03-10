@@ -29,12 +29,13 @@
 		<% end %>
 		<div id="content">			
 			<% current_user.donors.map do |donor| %>
-			
+				<div id="listing">
 				<b>Donor Name: </b><%= donor.name %><br>
 				username: <%= donor.username %><br>
 				Lifetime Donations: <%= donor.lifetime_donations %><br>
 				Email: <%= donor.email %><br>
-			<% end %>
+				</div>
+				<% end %>
 		</div>
 			<% scope = Donor.all.page(params[:page]) %>
 			<%= paginate(scope) %>

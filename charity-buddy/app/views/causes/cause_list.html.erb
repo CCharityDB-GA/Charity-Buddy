@@ -33,16 +33,19 @@
 			<%= submit_tag "Add Campaing" %>
 	</div>
 	<% end %>
+		<div id="content">
+			<% causes = Cause.all %>
+			<% causes.map do |cause| %>
+			<div id="listing">
+			<b>Campaing: </b> <%= cause.name %><br>
+			Total Donations: <%= cause.amount %><br>
+			Description: <%= cause.notes %><br>
 
-	<div id="content">
-		<% causes = Cause.all %>
-		<% causes.map do |cause| %>
-		<b>Campaing: </b> <%= cause.name %><br>
-		Total Donations: <%= cause.amount %><br>
-		Description: <%= cause.notes %><br>
+			</div>
 
 	<% end %>
-	</div>
+		</div>
+	
 </body>
 
 
