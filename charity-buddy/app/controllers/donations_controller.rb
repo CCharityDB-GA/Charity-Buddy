@@ -1,11 +1,11 @@
 class DonationsController < ApplicationController
 
 	def add
-		donor = Donor.where(username: params[:username])
-		cause = Cause.where(name: params[:cause])
+		donor = Donor.where(username: params[:username].downcase)
+		cause = Cause.where(name: params[:cause].downcase)
 		Donation.create!(amount: params[:amount],
-										 event: params[:event],
-							       cause: params[:cause])
+										 event: params[:event].downcase,
+							       cause: params[:cause].downcase)
 		total_donations = donor[0]["lifetime_donations"]
 		cause_donation = cause[0]["amount"]
 		cause_id = cause[0]["id"]

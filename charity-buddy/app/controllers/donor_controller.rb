@@ -7,7 +7,7 @@ class DonorController < ApplicationController
 	def add
 		current_user.donors.create!(name: params[:name], 
 																email: params[:email],
-																username: params[:username])
+																username: params[:username].downcase)
 		render :donor_list
 	end
 

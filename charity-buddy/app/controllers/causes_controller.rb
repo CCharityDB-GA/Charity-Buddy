@@ -5,7 +5,7 @@ class CausesController < ApplicationController
 	end
 
 	def add
-		cause = Cause.create!(name: params[:name], notes: params[:notes])
+		cause = Cause.create!(name: params[:name].downcase, notes: params[:notes])
 		render :cause_list
 	end
 end
