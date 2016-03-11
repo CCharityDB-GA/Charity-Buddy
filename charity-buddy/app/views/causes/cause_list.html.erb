@@ -1,6 +1,6 @@
 <body>
 	<div id="header">
-		<h1>Campaings</h1>
+		<h1>Campaigns</h1>
 	</div>
 	<div id="nav">
 		<button id="button">
@@ -16,7 +16,7 @@
 			<%= text_field_tag :username %>
 			<%= label_tag "Amount" %>
 			<%= number_field_tag :amount %>
-			<%= label_tag "Cause" %>
+			<%= label_tag "Campaign" %>
 			<%= text_field_tag :cause %>
 			<%= label_tag "Event" %>
 			<%= text_field_tag :event %>
@@ -24,20 +24,20 @@
 		</div>
 		<% end %>
 		<b>Add A Campaing</b>
-	<div id="add_campaing">
+	<div id="add_campaign">
 			<%= form_tag(add_cause_path) do %>
-			<%= label_tag "Campaing Name" %><br>
+			<%= label_tag "Campaign Name" %><br>
 			<%= text_field_tag :name %><br>
 			<%= label_tag "Description" %><br>
 			<%= text_area_tag :notes, nil, cols: 30, rows:2 %><br>
-			<%= submit_tag "Add Campaing" %>
+			<%= submit_tag "Add Campaign" %>
 	</div>
 	<% end %>
 		<div id="content">
 			<% causes = Cause.all %>
 			<% causes.map do |cause| %>
 			<div id="listing">
-			<b>Campaing: </b> <%= cause.name %><br>
+			<b>Campaign: </b> <%= cause.name %><br>
 			Total Donations: <%= cause.amount %><br>
 			Description: <%= cause.notes %><br>
 			</div>
