@@ -32,16 +32,19 @@ div#donate {
 
 div#listing {
 	display: inline-block;
-	padding-top: 10px;
 	width: 20%;
-	border-style: solid;
+	border: 1px solid;
+	border-radius: 15px;
 	margin: 10px;
+	height: 95px;
+	overflow: scroll;
+	padding-left: 10px;
 }
 
 div#content {
-	
+	margin-top: 20px;
 	background: #FFFFFF;
-	width: 100%;
+	width: 92%;
 	opacity: 0.6;
 	border-radius: 20px;
 	padding-left: 10px;

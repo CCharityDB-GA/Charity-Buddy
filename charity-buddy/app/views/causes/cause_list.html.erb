@@ -40,11 +40,11 @@
 			<b>Campaing: </b> <%= cause.name %><br>
 			Total Donations: <%= cause.amount %><br>
 			Description: <%= cause.notes %><br>
-
 			</div>
-
-	<% end %>
+			<% end %>
 		</div>
+		<% scope = Cause.all.page(params[:page]) %>
+			<%= paginate(scope) %>
 	
 </body>
 
